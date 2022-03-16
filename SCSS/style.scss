@@ -1,0 +1,149 @@
+@import "variables";
+@import "mixin";
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightGrayishCyan;
+    font-family: 'Space Mono', monospace;
+}
+
+header{
+    margin-bottom: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator{
+    width: 57.5rem;
+    height: 30rem;
+    display: flex;
+    padding: 1.875rem;
+    border-radius: 2rem;
+
+    background-color: $white;
+    &__board{
+        width: 50%;
+        border-radius: 1.5rem;
+        padding: 1.25rem;
+        h1{
+            font-size: 1.2rem;
+            color: $grayishCyan;
+            position: relative;
+            margin-bottom: .3125rem;
+            &::after{
+                content: "";
+                background-image: url('../images/icon-dollar.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 20px;
+                width: 15px;
+                
+                position: absolute;
+                left: 19px;
+                bottom: -40px;
+            }
+        }
+        .input_bill, .input_poeple{
+            height: 3.125rem;
+            width: 23.75rem;
+            text-align: end;
+            font-size: 1.5rem;
+            background-color: $veryLightGrayishCyan;
+            font-family: 'Space Mono', monospace;
+            border: none;
+            color: $veryDarkCyan;
+            padding-right: 19px;
+            border-radius: .1875rem;
+            margin-bottom: 2.8125rem;
+            &:focus{
+                outline: solid 3px $strongCyan;
+            }
+        }
+        h2{
+            font-size: 1.2rem;
+            color: $grayishCyan;
+            position: relative;
+            margin-bottom: .3125rem;
+        }
+        .button__grid{
+            display: grid;
+            grid-template-columns: repeat(3, 7.5rem);
+            grid-template-rows: repeat(2, 3rem);
+            gap: 1rem;
+            margin-bottom: 46px;
+            button{
+                background-color: $veryDarkCyan;
+                color: $white;
+                border: none;
+                font-size: 1.5rem;
+                border-radius: .25rem;
+                overflow: hidden;
+                font-weight: bold;
+                transition: all 200ms ease-in-out;
+                &:hover{
+                    background-color: $strongCyan;
+                    color: $veryDarkCyan;
+                    cursor: pointer;
+                    opacity: 0.7;
+                }
+            }
+            button.active{
+                background-color: $strongCyan;
+                color: $veryDarkCyan;
+            }
+            input{
+                
+                text-align: end;
+                font-size: 1.5rem;
+                background-color: $veryLightGrayishCyan;
+                font-family: 'Space Mono', monospace;
+                border: none;
+                color: $veryDarkCyan;
+                border-radius: .1875rem;
+                padding-right: .9375rem;
+                &:focus{
+                    outline: solid 3px $strongCyan;
+                    opacity: 0.7;
+                }
+                &:active{
+                    outline: solid 3px $strongCyan;
+                }
+            }
+        }
+
+        .number_people::after{
+            content: "";
+                background-image: url('../images/icon-person.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 20px;
+                width: 15px;
+                
+                position: absolute;
+                left: 19px;
+                bottom: -40px;
+        }
+
+    }
+    &__screen{
+        width: 50%;
+        background-color: $veryDarkCyan;
+        border-radius: 1.5rem;
+    }
+}
+
