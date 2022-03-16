@@ -32,12 +32,19 @@ header{
     display: flex;
     padding: 1.875rem;
     border-radius: 2rem;
-
     background-color: $white;
+    @include breakpoint-down(medium){
+        flex-direction: column;
+        height: auto;
+        width: 23.4375rem;
+    }
     &__board{
         width: 50%;
         border-radius: 1.5rem;
         padding: 1.25rem;
+        @include breakpoint-down(medium){
+            width: 100%;
+        }
         h1{
             font-size: 1.2rem;
             color: $grayishCyan;
@@ -59,7 +66,7 @@ header{
         }
         .input_bill, .input_poeple{
             height: 3.125rem;
-            width: 23.75rem;
+            width: 100%;
             text-align: end;
             font-size: 1.5rem;
             background-color: $veryLightGrayishCyan;
@@ -71,6 +78,9 @@ header{
             margin-bottom: 2.8125rem;
             &:focus{
                 outline: solid 3px $strongCyan;
+            }
+            @include breakpoint-down(medium){
+                
             }
         }
         h2{
@@ -85,6 +95,10 @@ header{
             grid-template-rows: repeat(2, 3rem);
             gap: 1rem;
             margin-bottom: 46px;
+            @include breakpoint-down(medium){
+            grid-template-columns: repeat(2, 8.3rem);
+            grid-template-rows: repeat(3, 3rem);
+            }
             button{
                 background-color: $veryDarkCyan;
                 color: $white;
@@ -144,6 +158,71 @@ header{
         width: 50%;
         background-color: $veryDarkCyan;
         border-radius: 1.5rem;
+        padding: 2.5rem;
+        padding-top: 3.75rem;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        @include breakpoint-down(medium){
+            width: 100%;
+            padding: 1.4375rem;
+            height: 16.25rem;
+        }
+        .perPerson{
+            display: flex;
+            justify-content: space-between;
+            
+            margin-bottom: 3.4375rem;
+            align-items: center;
+            @include breakpoint-down(medium){
+                margin-bottom: 1rem;
+            }
+        }
+        .total{
+            display: flex;
+            justify-content: space-between;
+            
+            align-items: center;
+        }
+        .left{
+            .small{
+                color: $grayishCyan;
+                font-size: 0.8rem;
+            }
+        }
+        .right{
+            color: $strongCyan;
+            font-size: 3rem;
+            @include breakpoint-down(medium){
+                font-size: 2rem;
+            }
+        }
+        button{
+            position: absolute;
+            
+            justify-self: flex-end;
+            width: calc(100% - 5rem);
+            bottom: 0;
+            transform: translateY(-2.5rem);
+            height: 50px;
+            text-transform: uppercase;
+            background-color: $strongCyan;
+            border: none;
+            border-radius: 0.7rem;
+            font-weight: 700;
+            color: $veryDarkCyan;
+            font-size: 1.2rem;
+            transition: all 200ms ease-in-out;
+            &:hover{
+                background-color: $strongCyanl;
+                cursor: pointer;
+            }
+            @include breakpoint-down(medium){
+                left: 50%;
+                transform: translateX(-50%) translateY(-2.5rem);
+            }
+        }
     }
 }
 
