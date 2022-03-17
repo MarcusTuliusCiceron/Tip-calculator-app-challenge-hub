@@ -129,6 +129,7 @@ header{
                 color: $veryDarkCyan;
                 border-radius: .1875rem;
                 padding-right: .9375rem;
+                position: relative;
                 &:focus{
                     outline: solid 3px $strongCyan;
                     opacity: 0.7;
@@ -136,9 +137,33 @@ header{
                 &:active{
                     outline: solid 3px $strongCyan;
                 }
+                
+            }
+            .customTip.invalid{
+                outline: solid 3px red;
+            }
+            .customTip.active{
+                outline: solid 3px $strongCyan;
+            }
+            
+            
+        }
+        .formHeader{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                visibility: hidden;
+            }
+            p.invalid{
+                color: red;
+                visibility: visible;
             }
         }
-
+        .input_poeple.invalid{
+            outline: solid 3px red;
+            
+        }
         .number_people::after{
             content: "";
                 background-image: url('../images/icon-person.svg');

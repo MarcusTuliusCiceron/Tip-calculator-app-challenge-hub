@@ -175,6 +175,7 @@ header {
   color: #00494d;
   border-radius: .1875rem;
   padding-right: .9375rem;
+  position: relative;
 }
 
 .calculator__board .button__grid input:focus {
@@ -184,6 +185,39 @@ header {
 
 .calculator__board .button__grid input:active {
   outline: solid 3px #26c0ab;
+}
+
+.calculator__board .button__grid .customTip.invalid {
+  outline: solid 3px red;
+}
+
+.calculator__board .button__grid .customTip.active {
+  outline: solid 3px #26c0ab;
+}
+
+.calculator__board .formHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calculator__board .formHeader p {
+  visibility: hidden;
+}
+
+.calculator__board .formHeader p.invalid {
+  color: red;
+  visibility: visible;
+}
+
+.calculator__board .input_poeple.invalid {
+  outline: solid 3px red;
 }
 
 .calculator__board .number_people::after {
